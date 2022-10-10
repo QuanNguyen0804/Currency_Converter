@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "currencyConverterView";
+}
+
+<div class="cal">
+    <h1 class="cal-header">Currency Converter</h1>
+
+    <form class="cal-form" action="/CurrencyConverter" method="get">
+        <div class="field-group">
+            <span class="label">Số tiền ($)</span>
+            <input type="text" name="a" value="@Model.a" /> <br />
+        </div>
+
+        <div class="field-group">
+            <span class="label">tỉ giá</span>
+            <input type="text" name="b" value="@Model.b" /> <br />
+        </div>
+
+        <input type="submit" value="Tính" class="cal-btn" />
+        <p>
+            <span class="label">Kết quả:</span>
+            @if (Model != null)
+            {
+                @Model.result
+            }
+            <span class="unit">(VNĐ)</span>
+        </p>
+    </form>
+</div>
